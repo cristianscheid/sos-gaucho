@@ -1,13 +1,14 @@
 package com.gaucho.sos.controllers;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class StoriesController {
 
-    //create a mappings for "/stories"
-    @GetMapping("/stories")
+    //create a mapping for "/"
+    
+    @GetMapping("/")
     public String getStories() {
         return "stories";
     }
