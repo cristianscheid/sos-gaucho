@@ -1,0 +1,13 @@
+<div class="login-container">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <strong>{{ headerTitle }}</strong>
+            </div>
+            <div class="card-body">
+                <ng-content></ng-content>
+                <button class="btn btn-dark" (click)="submit()">{{ buttonLabel }}</button>
+            </div>
+        </div>
+    </div>
+</div>

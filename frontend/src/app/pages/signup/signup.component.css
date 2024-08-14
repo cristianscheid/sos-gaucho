@@ -1,0 +1,4 @@
+.password-input ::ng-deep .form-group
+{
+    margin-bottom: 10px;
+}

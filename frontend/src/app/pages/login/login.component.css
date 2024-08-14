@@ -1,0 +1,27 @@
+.login-container
+{
+    width: 100vw; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.card {
+    background: #F0F0F0;
+    border-width: 0;
+    border-radius: .25rem;
+    box-shadow: 0 1px 3px #000000;
+    margin-bottom: 1.5rem
+}
+
+.card-header {
+    background-color: transparent;
+    border-color: #000000;
+    background-clip: padding-box
+}
+
+/* .card-body p:last-child {
+    margin-bottom: 0
+} */

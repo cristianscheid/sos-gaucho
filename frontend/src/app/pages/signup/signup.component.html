@@ -1,0 +1,34 @@
+<app-default-login-layout
+    headerTitle="Cadastro"
+    buttonLabel="Cadastrar"
+    (submit)="submit()">
+    <form [formGroup]="signupForm">
+        <app-primary-input
+            formControlName="name" 
+            placeholder="Nome"
+            legend="Insira o seu nome"
+            ngDefaultControl>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="email" 
+            type="email"
+            placeholder="E-mail"
+            legend="Seu e-mail não será compartilhado"
+            ngDefaultControl>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="password"
+            class="password-input" 
+            type="password"
+            placeholder="Senha"
+            ngDefaultControl>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="passwordConfirm" 
+            type="password"
+            placeholder="Confirmar Senha"
+            legend="Sua senha será criptografada"
+            ngDefaultControl>
+        </app-primary-input>
+    </form>
+</app-default-login-layout>
