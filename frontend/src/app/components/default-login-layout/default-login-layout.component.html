@@ -6,7 +6,12 @@
             </div>
             <div class="card-body">
                 <ng-content></ng-content>
-                <button class="btn btn-dark" (click)="submit()">{{ buttonLabel }}</button>
+                <button 
+                    class="btn btn-dark" 
+                    (click)="submit()"
+                    [disabled]="formGroup.invalid">
+                        {{ buttonLabel }}
+                </button>
             </div>
         </div>
     </div>

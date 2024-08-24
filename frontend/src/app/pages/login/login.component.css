@@ -1,5 +1,4 @@
-.login-container
-{
+.login-container {
     width: 100vw; 
     height: 100vh;
     display: flex;
@@ -21,7 +20,3 @@
     border-color: #000000;
     background-clip: padding-box
 }
-
-/* .card-body p:last-child {
-    margin-bottom: 0
-} */

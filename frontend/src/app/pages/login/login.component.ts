@@ -38,11 +38,14 @@ export class LoginComponent {
   }
 
   submit(){
-    this.navigate();
+    this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
+      next:   () => this.navigate(),
+      error:  () => console.log("Erro inesperado! Tente novamente")
+    })
   }
 
   navigate(){
-    this.router.navigate(["signup"]); //change to stories route
+    this.router.navigate(["signup"]); //TODO: change to stories route
   }
 
 }

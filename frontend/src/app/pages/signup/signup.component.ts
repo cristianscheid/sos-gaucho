@@ -4,6 +4,8 @@ import { DefaultLoginLayoutComponent } from '../../components/default-login-layo
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
+import { passwordConfirmValidator } from '../../validators/password-confirm.validator';
+import { NgIf } from '@angular/common';
 
 interface SignupForm {
   name: FormControl,
@@ -16,6 +18,7 @@ interface SignupForm {
   selector: 'app-signup',
   standalone: true,
   imports: [
+    NgIf,
     DefaultLoginLayoutComponent, 
     ReactiveFormsModule, 
     PrimaryInputComponent
@@ -38,8 +41,10 @@ export class SignupComponent {
       name:             new FormControl('', [Validators.required, Validators.minLength(3)]),
       email:            new FormControl('', [Validators.required, Validators.email]),
       password:         new FormControl('', [Validators.required, Validators.minLength(6)]),
-      passwordConfirm:  new FormControl('', [Validators.required, Validators.minLength(6)]),
-    })
+      passwordConfirm:  new FormControl('', [Validators.required, Validators.minLength(6)]), 
+    }, passwordConfirmValidator )
+
+    this.signupForm.patchValue({name: 'peido'})
   }
 
   submit(){
@@ -50,7 +55,7 @@ export class SignupComponent {
   }
 
   navigate(){
-    this.router.navigate([""]); //change to complete-register route
+    this.router.navigate([""]); //TODO: change to complete-register route
   }
 
 }
