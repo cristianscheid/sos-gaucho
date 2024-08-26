@@ -1,0 +1,66 @@
+.card-body {
+    margin: auto;
+    width: 95%;
+}
+
+.carousel {
+    margin: auto;    
+    width: 90%;
+}
+
+.carousel-inner {
+    border-radius: 6px;
+}
+
+.carousel-item {
+    height: 300px;
+    background-color: black;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.btn-success {
+    margin: auto;
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Extra large devices (large desktops) */
+@media (min-width: 1200px) {
+    .container {
+        width: 50%;
+    }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        width: 60%;
+    }
+}
+
+/* Medium devices (tablets in landscape mode) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        width: 75%;
+    }
+}
+
+/* Small devices (tablets) */
+@media (min-width: 577px) and (max-width: 767px) {
+    .container {
+        width: 85%;
+    }
+}
+
+/* Extra small devices (phones) */
+@media (max-width: 576px) {
+    .container {
+        width: 95%;
+    }
+}

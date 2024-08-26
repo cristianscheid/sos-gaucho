@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <div class="card">
+        
+        <div class="card-body">
+            <h5 class="card-title">{{ data.title }}</h5>
+            <p class="card-text">{{ data.description }}</p>
+            <p class="card-text"><small class="text-muted">Last updated {{ data.updatedAt | date:'short' }}</small></p>
+        </div>
+
+        <div [id]="'carousel-story-' + data.id" class="carousel slide">
+            <div class="carousel-indicators">
+                <button *ngFor="let image of data.images; let i = index" type="button" [attr.data-bs-target]="'#carousel-story-' + data.id" [attr.data-bs-slide-to]="i" [class.active]="i === 0" aria-label="'Slide ' + (i + 1)"></button>
+            </div>
+            <div class="carousel-inner">
+                <div *ngFor="let image of data.images; let i = index" class="carousel-item" [class.active]="i === 0">
+                    <img [src]="image.src" class="d-block w-100" [alt]="image.alt">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carousel-story-' + data.id" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carousel-story-' + data.id" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <button type="button" class="btn btn-success">Quero Ajudar</button>
+    </div>
+</div>
