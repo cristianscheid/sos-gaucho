@@ -43,8 +43,6 @@ export class SignupComponent {
       password:         new FormControl('', [Validators.required, Validators.minLength(6)]),
       passwordConfirm:  new FormControl('', [Validators.required, Validators.minLength(6)]), 
     }, passwordConfirmValidator )
-
-    this.signupForm.patchValue({name: 'peido'})
   }
 
   submit(){
