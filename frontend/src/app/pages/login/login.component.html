@@ -1,0 +1,22 @@
+<app-default-login-layout
+    [formGroup]="loginForm"
+    headerTitle="Login"
+    buttonLabel="Entrar"
+    (submit)="submit()">
+    <form [formGroup]="loginForm">
+        <app-primary-input
+            formControlName="email"
+            type="email"
+            placeholder="E-mail"
+            legend="Seu e-mail não será compartilhado"
+            ngDefaultControl>
+        </app-primary-input>
+        <app-primary-input 
+            formControlName="password"
+            type="password"
+            placeholder="Senha"
+            legend="Sua senha será criptografada"
+            ngDefaultControl>
+        </app-primary-input>
+    </form>
+</app-default-login-layout>

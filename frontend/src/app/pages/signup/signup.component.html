@@ -1,0 +1,37 @@
+<app-default-login-layout
+    [formGroup]="signupForm"
+    headerTitle="Cadastro"
+    buttonLabel="Cadastrar"
+    (submit)="submit()">
+    <form [formGroup]="signupForm">
+        <app-primary-input
+            formControlName="name" 
+            placeholder="Nome"
+            legend="Insira o seu nome"
+            ngDefaultControl>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="email" 
+            type="email"
+            placeholder="E-mail"
+            legend="Insira o seu e-mail"
+            ngDefaultControl>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="password"
+            class="password-input" 
+            type="password"
+            placeholder="Senha"
+            legend="Insira a sua senha. Deve conter no mínimo 6 caracteres."
+            ngDefaultControl>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="passwordConfirm" 
+            type="password"
+            placeholder="Confirmar Senha"
+            legend="Confirme a sua senha"
+            ngDefaultControl>
+        </app-primary-input>
+        <small class="form-text text-danger" *ngIf="signupForm.errors?.['passwordNoMatch']">As senhas não coincidem!</small>
+    </form>
+</app-default-login-layout>
