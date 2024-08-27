@@ -1,0 +1,19 @@
+.carousel {
+    margin: auto;    
+    width: 90%;
+}
+
+.carousel-inner {
+    border-radius: 6px;
+}
+
+.carousel-item {
+    height: 300px;
+    background-color: black;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}

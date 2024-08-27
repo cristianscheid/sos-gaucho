@@ -15,6 +15,12 @@ import { FeedStoryComponent } from '../../components/feed-story/feed-story.compo
 export class FeedComponent {
   feedStories: any[] = [];
 
+  /**
+   * Initializes the component and generates mock feed stories.
+   * 
+   * This mock data is used for development and testing purposes.
+   * It will be replaced with real data fetched from the backend API in the future.
+   */
   constructor() {
     this.generateFeedStories(15);
   }
@@ -35,12 +41,11 @@ export class FeedComponent {
     const images = [];
     // Random number between 3 and 7
     const numberOfImages = Math.floor(Math.random() * 5) + 3;
-  
     for (let i = 0; i < numberOfImages; i++) {
       // Random number between 001 and 040
       const imageNumber = ('000' + Math.floor(Math.random() * 40 + 1)).slice(-3);
       images.push({
-        src: `assets/dev-cristian/images/image_${imageNumber}.jpg`,
+        src: `assets/mock-data/story-images/image_${imageNumber}.jpg`,
         alt: `Random Image ${imageNumber}`
       });
     }
