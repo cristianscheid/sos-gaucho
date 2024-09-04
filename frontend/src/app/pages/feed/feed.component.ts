@@ -12,7 +12,7 @@ import { FeedStory } from '../../types/feed-story.type';
     FeedStoryComponent
   ],
   templateUrl: './feed.component.html',
-  styleUrls: ['./feed.component.css']
+  styleUrl: './feed.component.css'
 })
 export class FeedComponent implements OnInit {
   feedStories: FeedStory[] = [];
