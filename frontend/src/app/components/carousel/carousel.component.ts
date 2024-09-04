@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './carousel.component.css'
 })
 export class CarouselComponent {
-  @Input() images: { src: string, alt: string }[] = [];
+  @Input() images: { src: string, alt?: string }[] = [];
   @Input() carouselId: string = 'carousel';
   @Input() initialIndex: number = 0;
   
