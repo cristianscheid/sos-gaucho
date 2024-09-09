@@ -30,11 +30,12 @@ public class Story {
     @Column(nullable = false)
     private String longDescription;
     @Column(nullable = false)
+    private String benefitedName;
+    @Column(nullable = false)
+    private String contact;
+    @Column(nullable = false)
     private String helpNeeded;
-    @Column(nullable = false)
-    private String postalCode;
-    @Column(nullable = false)
-    private String address;
+    private String city;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;
