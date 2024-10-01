@@ -1,0 +1,11 @@
+@if(images.length != 0) {
+    <ngb-carousel class="carousel" [id]="carouselId" activeId="id-{{ initialIndex }}" [interval]="0" [showNavigationArrows]="true" [showNavigationIndicators]="true">
+        @for (image of images; track $index) {
+                <ng-template ngbSlide id="id-{{ $index }}">
+                    <div class="carousel-inner rounded-1">
+                        <img [src]="image.src" class="d-block" [alt]="image.alt"/>
+                    </div>
+                </ng-template>
+        }
+    </ngb-carousel>
+}
