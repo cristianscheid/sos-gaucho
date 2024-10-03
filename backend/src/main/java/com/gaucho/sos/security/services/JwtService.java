@@ -35,8 +35,6 @@ public class JwtService {
     }
 
     public String validateToken( String token ) {
-        String subject = null;
-
         try {
             return JWT.require( getAlgorithm() )
                         .withIssuer( "sos-gaucho-api" )

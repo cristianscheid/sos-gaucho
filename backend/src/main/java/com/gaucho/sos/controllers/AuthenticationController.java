@@ -27,7 +27,7 @@ public class AuthenticationController {
     JwtService jwtService;
 
     @PostMapping("/login")
-    public ResponseEntity login( @RequestBody LoginRequestDTO body ) {
+    public ResponseEntity<AuthResponseDTO> login( @RequestBody LoginRequestDTO body ) {
         User user = repository.findByEmail( body.email() ).orElseThrow( () -> new RuntimeException( ( "User not found" ) ) );
 
         if ( passwordEncoder.matches( body.password(), user.getPassword() ) ) {
@@ -38,7 +38,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity register( @RequestBody RegisterRequestDTO body ) {
+    public ResponseEntity<AuthResponseDTO> register( @RequestBody RegisterRequestDTO body ) {
         Optional<User> existentUser = this.repository.findByEmail( body.email() );
 
         if ( existentUser.isPresent() ) return ResponseEntity.badRequest().build();

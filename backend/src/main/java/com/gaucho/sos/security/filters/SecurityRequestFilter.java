@@ -45,7 +45,7 @@ public class SecurityRequestFilter extends OncePerRequestFilter {
     }
 
     private static UsernamePasswordAuthenticationToken getUsernamePasswordAuthenticationToken( User user ) {
-        UserDetails userDetails = new org.springframework.security.core.userdetails.User( user.getEmail(), user.getPassword(), new ArrayList() );
+        UserDetails userDetails = new org.springframework.security.core.userdetails.User( user.getEmail(), user.getPassword(), new ArrayList<>() );
 
         return new UsernamePasswordAuthenticationToken( userDetails,null, userDetails.getAuthorities() );
     }
