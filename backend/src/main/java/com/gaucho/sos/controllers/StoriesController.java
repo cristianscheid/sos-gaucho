@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,8 +25,12 @@ public class StoriesController {
     @GetMapping("/stories")
     public ResponseEntity<Page<StoryResponseDTO>> getStories(
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "10") int size) {
-        Pageable pageable = PageRequest.of(page, size);
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "createdAt") String sortBy,
+            @RequestParam(defaultValue = "desc") String sortOrder) {
+
+        Sort.Direction direction = sortOrder.equalsIgnoreCase("asc") ? Sort.Direction.ASC : Sort.Direction.DESC;
+        Pageable pageable = PageRequest.of(page, size, direction, sortBy);
         Page<Story> stories = storyRepository.findAll(pageable);
 
         Page<StoryResponseDTO> storyDtos = stories.map(story -> new StoryResponseDTO(
@@ -56,7 +61,8 @@ public class StoriesController {
                         story.getHelpNeeded(),
                         story.getCity(),
                         story.getCreatedAt(),
-                        story.getImages().stream().map(image -> image.getPath()).collect(Collectors.toList())))
+                        story.getImages().stream().map(image -> image.getPath())
+                                .collect(Collectors.toList())))
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
