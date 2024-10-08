@@ -44,8 +44,19 @@ public class StoriesController {
     }
 
     @GetMapping("/stories/{id}")
-    public ResponseEntity<Story> getStoryById(@PathVariable int id) {
+    public ResponseEntity<StoryResponseDTO> getStoryById(@PathVariable int id) {
         return storyRepository.findById(id)
+                .map(story -> new StoryResponseDTO(
+                        story.getId(),
+                        story.getTitle(),
+                        story.getShortDescription(),
+                        story.getLongDescription(),
+                        story.getBenefitedName(),
+                        story.getContact(),
+                        story.getHelpNeeded(),
+                        story.getCity(),
+                        story.getCreatedAt(),
+                        story.getImages().stream().map(image -> image.getPath()).collect(Collectors.toList())))
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }

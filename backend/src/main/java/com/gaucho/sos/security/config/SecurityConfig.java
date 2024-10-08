@@ -23,14 +23,16 @@ public class SecurityConfig {
     SecurityRequestFilter securityFilter;
 
     @Bean
-    public SecurityFilterChain securityFilterChain( HttpSecurity httpSecurity ) throws Exception {
-        httpSecurity.csrf( csrf -> csrf.disable() )
-                    .sessionManagement( session -> session.sessionCreationPolicy( SessionCreationPolicy.STATELESS ) )
-                    .authorizeHttpRequests( authorize -> authorize.requestMatchers( HttpMethod.POST, "/authentication/login" ).permitAll()
-                                                                    .requestMatchers( HttpMethod.POST, "/authentication/register" ).permitAll()
-                                                                    .requestMatchers(HttpMethod.GET, "/stories").permitAll()
-                                                                    .anyRequest().authenticated() )
-                    .addFilterBefore( securityFilter, UsernamePasswordAuthenticationFilter.class );
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.csrf(csrf -> csrf.disable())
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(
+                        authorize -> authorize.requestMatchers(HttpMethod.POST, "/authentication/login").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/authentication/register").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/stories").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/stories/{id}").permitAll()
+                                .anyRequest().authenticated())
+                .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class);
 
         return httpSecurity.build();
     }
@@ -41,7 +43,8 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationManager authenticationManager( AuthenticationConfiguration authenticationConfiguration ) throws Exception {
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
+            throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
 }
