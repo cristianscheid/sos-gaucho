@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -19,8 +19,10 @@ public class User {
 
     @Column(nullable = false)
     private String name;
+
     @Column(nullable = false)
     private String email;
+
     @Column(nullable = false)
     private String password;
 }
