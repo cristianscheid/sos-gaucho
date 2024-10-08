@@ -30,6 +30,7 @@ public class SecurityConfig {
                                                                     .requestMatchers( HttpMethod.POST, "/authentication/register" ).permitAll()
                                                                     .requestMatchers(HttpMethod.GET, "/stories").permitAll()
                                                                     .requestMatchers(HttpMethod.GET, "/stories/{id}").permitAll()
+                                                                    .requestMatchers(HttpMethod.GET, "/uploads/images/stories/**").permitAll()
                                                                     .anyRequest().authenticated() )
                     .addFilterBefore( securityFilter, UsernamePasswordAuthenticationFilter.class );
 

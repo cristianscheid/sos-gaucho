@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.util.stream.Collectors;
 
@@ -21,6 +22,12 @@ public class StoriesController {
 
     @Autowired
     private StoryRepository storyRepository;
+
+    private String getImageBasePath() {
+        return ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path("/uploads/images/stories/")
+                .toUriString();
+    }
 
     @GetMapping("/stories")
     public ResponseEntity<Page<StoryResponseDTO>> getStories(
@@ -33,6 +40,8 @@ public class StoriesController {
         Pageable pageable = PageRequest.of(page, size, direction, sortBy);
         Page<Story> stories = storyRepository.findAll(pageable);
 
+        String imageBasePath = getImageBasePath();
+
         Page<StoryResponseDTO> storyDtos = stories.map(story -> new StoryResponseDTO(
                 story.getId(),
                 story.getTitle(),
@@ -43,13 +52,15 @@ public class StoriesController {
                 story.getHelpNeeded(),
                 story.getCity(),
                 story.getCreatedAt(),
-                story.getImages().stream().map(image -> image.getPath()).collect(Collectors.toList())));
+                story.getImages().stream().map(image -> imageBasePath + story.getId() + "/" + image.getPath()).collect(Collectors.toList())));
 
         return ResponseEntity.ok(storyDtos);
     }
 
     @GetMapping("/stories/{id}")
     public ResponseEntity<StoryResponseDTO> getStoryById(@PathVariable int id) {
+        String imageBasePath = getImageBasePath();
+
         return storyRepository.findById(id)
                 .map(story -> new StoryResponseDTO(
                         story.getId(),
@@ -61,7 +72,7 @@ public class StoriesController {
                         story.getHelpNeeded(),
                         story.getCity(),
                         story.getCreatedAt(),
-                        story.getImages().stream().map(image -> image.getPath())
+                        story.getImages().stream().map(image -> imageBasePath + story.getId() + "/" + image.getPath())
                                 .collect(Collectors.toList())))
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
