@@ -6,7 +6,7 @@ Currently under active development, with core features such as user management a
 
 ## Description
 
-SOS Gaucho is a platform designed to connect people affected by natural disasters in Rio Grande do Sul, Brazil, with those who wish to offer assistance. Affected individuals can share their stories, detailing how they were impacted, along with images and information about the type of help they need (e.g., manual labor, transportation, etc.). Visitors can browse these stories and offer help where needed. The platform acts as a bridge between those in need and potential volunteers.
+SOS Gaucho is a platform designed to connect people affected by natural disasters in Rio Grande do Sul, Brazil, with volunteers offering assistance. Affected individuals can share their stories, detailing how they were impacted, along with images and information about the help they need (e.g., manual labor, transportation). Built with Spring Boot as a RESTful API for the backend, and Angular with Bootstrap for the frontend, the platform serves as a bridge between those in need and those offering help.
 
 ## Features
 
