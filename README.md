@@ -29,20 +29,20 @@ SOS Gaucho is a platform designed to connect people affected by natural disaster
 
 This project is being developed collaboratively. We would like to acknowledge and thank the following contributors for their dedication and support:
 
-<div style="display: flex; flex-direction: column; gap: 10px;">
-  <div style="display: flex; align-items: center;">
-    <img src="https://github.com/abfanck.png?size=40" alt="Arthur Bastos Fanck" style="border-radius: 50%; width: 40px; height: 40px; margin-right: 10px;">
-    <img src="https://img.shields.io/badge/Arthur%20Bastos%20Fanck-GitHub?color=gray&logo=github&logoColor=white" alt="GitHub Arthur Bastos Fanck">
-  </div>
-  <div style="display: flex; align-items: center;">
-    <img src="https://github.com/cristianscheid.png?size=40" alt="Cristian Scheid" style="border-radius: 50%; width: 40px; height: 40px; margin-right: 10px;">
-    <img src="https://img.shields.io/badge/Cristian%20Scheid-GitHub?color=gray&logo=github&logoColor=white" alt="GitHub Cristian Scheid">
-  </div>
-  <div style="display: flex; align-items: center;">
-    <img src="https://github.com/MX1994.png?size=40" alt="Mauricio Ribeiro Xavier" style="border-radius: 50%; width: 40px; height: 40px; margin-right: 10px;">
-    <img src="https://img.shields.io/badge/Mauricio%20Ribeiro%20Xavier-GitHub?color=gray&logo=github&logoColor=white" alt="GitHub Mauricio Ribeiro Xavier">
-  </div>
-</div>
+<a href="https://github.com/abfanck" target="_blank">
+  <img src="https://github.com/abfanck.png?size=20">
+  <img src="https://img.shields.io/badge/Arthur%20Bastos%20Fanck-GitHub?color=gray&logo=github&logoColor=white">
+</a><br>
+
+<a href="https://github.com/cristianscheid" target="_blank">
+  <img src="https://github.com/cristianscheid.png?size=20">
+  <img src="https://img.shields.io/badge/Cristian%20Scheid-GitHub?color=gray&logo=github&logoColor=white">
+</a><br>
+
+<a href="https://github.com/MX1994" target="_blank">
+  <img src="https://github.com/MX1994.png?size=20">
+  <img src="https://img.shields.io/badge/Mauricio%20Ribeiro%20Xavier-GitHub?color=gray&logo=github&logoColor=white">
+</a>
 
 <!-- Custom image shields for the Built With section -->
 
