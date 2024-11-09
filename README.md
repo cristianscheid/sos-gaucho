@@ -29,18 +29,18 @@ SOS Gaucho is a platform designed to connect people affected by natural disaster
 
 This project is being developed collaboratively. We would like to acknowledge and thank the following contributors for their dedication and support:
 
+[![Arthur Bastos Fanck](https://github.com/abfanck.png?size=20)](https://github.com/abfanck)
 <a href="https://github.com/abfanck" target="_blank">
-  <img src="https://github.com/abfanck.png?size=20">
   <img src="https://img.shields.io/badge/Arthur%20Bastos%20Fanck-GitHub?color=gray&logo=github&logoColor=white">
 </a><br>
 
+[![Cristian Scheid](https://github.com/cristianscheid.png?size=20)](https://github.com/cristianscheid)
 <a href="https://github.com/cristianscheid" target="_blank">
-  <img src="https://github.com/cristianscheid.png?size=20">
   <img src="https://img.shields.io/badge/Cristian%20Scheid-GitHub?color=gray&logo=github&logoColor=white">
 </a><br>
 
+[![Mauricio Ribeiro Xavier](https://github.com/MX1994.png?size=20)](https://github.com/MX1994)
 <a href="https://github.com/MX1994" target="_blank">
-  <img src="https://github.com/MX1994.png?size=20">
   <img src="https://img.shields.io/badge/Mauricio%20Ribeiro%20Xavier-GitHub?color=gray&logo=github&logoColor=white">
 </a>
 
