@@ -13,13 +13,13 @@ SOS Gaucho is a platform designed to connect people affected by natural disaster
 - User signup and login
 - Profile viewing, editing, and deletion
 - Ability to create, edit, and delete personal stories with descriptions, images, and additional details
-- Browse and explore stories through a dynamic feed
+- Dynamic feed to explore and browse stories
 - Secure routes with JWT-based authentication and authorization
 
 ## Built With
 
 ![Java][java-img-shield]
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3.1-gray?logo=springboot&style=for-the-badge)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3-gray?logo=springboot&style=for-the-badge)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Latest-gray?logo=postgresql&style=for-the-badge)
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.4-gray?logo=typescript&style=for-the-badge)
