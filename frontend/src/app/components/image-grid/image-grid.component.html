@@ -1,0 +1,7 @@
+<div class="row row-cols-3 row-cols-sm-4 row-cols-lg-3 row-cols-xxl-4 g-3">
+    @for (image of images; track $index) {
+        <div class="col" (click)="onImageClick(images, $index)">
+            <app-image-card [src]="image.src" />
+        </div>
+    }
+</div>
