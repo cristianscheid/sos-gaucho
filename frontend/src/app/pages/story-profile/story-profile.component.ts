@@ -4,6 +4,7 @@ import { ImageGridComponent } from '../../components/image-grid/image-grid.compo
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormInputComponent } from '../../components/form-input/form-input.component';
 import { FormTextAreaComponent } from '../../components/form-text-area/form-text-area.component';
+import { Image } from '../../types/image.type';
 
 @Component({
   selector: 'app-story-profile',
@@ -14,14 +15,14 @@ import { FormTextAreaComponent } from '../../components/form-text-area/form-text
 })
 export class StoryProfileComponent {
   
-  @Input() userImage: {src: string, alt?: string} = {src: '', alt: ''};
+  @Input() userImage: Image = {src: '', alt: ''};
   @Input() name = '';
   @Input() city = '';
   @Input() contact = '';
   @Input() story = '';
   @Input() howToHelp = '';
   @Input() isEditMode = true;
-  @Input() images: {src: string, alt?: string}[] = [];
+  @Input() images: Image[] = [];
   
   storyForm !: FormGroup;
 

@@ -2,7 +2,7 @@
     <div class="row row-cols-1 row-cols-lg-2 align-items-center">
         <div class="col">
             <div class="vstack gap-4">
-                <app-image-circle [src]="userImage.src" [alt]="userImage.alt" [width]="150" [height]="150" />
+                <app-image-circle [image]="userImage" [width]="150" [height]="150" />
                 <h1>Dados do Beneficiado</h1>
                 <form [formGroup]="storyForm" class="vstack gap-4">
                     <app-form-input ngDefaultControl formControlName="name" title="Nome" type="text"

@@ -1,5 +1,6 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { Image } from '../../types/image.type';
 
 @Component({
   selector: 'app-image-card',
@@ -9,6 +10,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './image-card.component.css'
 })
 export class ImageCardComponent {
-  @Input() src = '';
-  @Input() alt? = '';
+  @Input() image: Image = { src: '' };
 }

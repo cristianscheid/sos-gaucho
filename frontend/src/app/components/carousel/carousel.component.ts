@@ -1,6 +1,7 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbActiveModal, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { Image } from '../../types/image.type';
 
 @Component({
   selector: 'app-carousel',
@@ -10,7 +11,7 @@ import { NgbActiveModal, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrl: './carousel.component.css'
 })
 export class CarouselComponent implements OnInit {
-  @Input() images: { src: string, alt?: string }[] = [];
+  @Input() images: Image[] = [];
   @Input() carouselId: string = 'carousel';
   @Input() initialIndex: number = 0;
   

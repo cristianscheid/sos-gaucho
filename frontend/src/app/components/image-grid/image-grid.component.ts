@@ -2,6 +2,7 @@ import { Component, inject, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { ImageCardComponent } from '../image-card/image-card.component';
+import { Image } from '../../types/image.type';
 
 @Component({
   selector: 'app-image-grid',
@@ -12,11 +13,11 @@ import { ImageCardComponent } from '../image-card/image-card.component';
 })
 export class ImageGridComponent {
 
-  @Input() images: {src: string, alt?: string}[] = [];
+  @Input() images: Image[] = [];
 
   private modalService = inject(NgbModal);
 
-  onImageClick(images: {src: string, alt?: string}[], index: number) {
+  onImageClick(images: Image[], index: number) {
     const modalRef = this.modalService.open(CarouselComponent, { centered: true });
     modalRef.componentInstance.images = images;
     modalRef.componentInstance.initialIndex = index;
