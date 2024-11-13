@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row row-cols-1 row-cols-lg-2 align-items-center">
+        <div class="col">
+            <div class="vstack gap-4">
+                <app-image-circle [src]="userImage.src" [alt]="userImage.alt" [width]="150" [height]="150" />
+                <h1>Dados do Beneficiado</h1>
+                <form [formGroup]="storyForm" class="vstack gap-4">
+                    <app-form-input ngDefaultControl formControlName="name" title="Nome" type="text"
+                        placeholder="Adicone seu nome..." [value]="storyForm.value['name']" />
+                    <app-form-input ngDefaultControl formControlName="city" title="Cidade" type="text"
+                        placeholder="Adicone sua cidade..." [value]="storyForm.value['city']" />
+                    <app-form-input ngDefaultControl formControlName="contact" title="Contato" type="text"
+                        placeholder="Adicone seu contato..." [value]="storyForm.value['contact']" />
+                    <app-form-text-area ngDefaultControl formControlName="story" title="História"
+                        placeholder="Conte sua história..." [value]="storyForm.value['story']" />
+                    <app-form-text-area ngDefaultControl formControlName="howToHelp" title="Como ajudar?"
+                        placeholder="Diga como pode ser ajudado.." [value]="storyForm.value['howToHelp']" />
+                </form>
+            </div>
+        </div>
+        <div class="col py-4 py-lg-0">
+            <app-image-grid [images]="images" />
+        </div>
+    </div>
+</div>
