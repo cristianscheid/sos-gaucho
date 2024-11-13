@@ -18,7 +18,7 @@ export const routes: Routes = [
         component: FeedComponent
     },
     {
-        path: 'story',
+        path: 'story/:id',
         component: StoryProfileComponent
     },
 ];

@@ -24,7 +24,13 @@ export class StoryProfileComponent {
   @Input() isEditMode = true;
   @Input() images: Image[] = [];
   
-  storyForm !: FormGroup;
+  @Input()
+  set id(storyId: number) {
+    this.storyId = storyId;
+  }
+
+  storyId!: number;
+  storyForm!: FormGroup;
 
   constructor() { 
     this.storyForm = new FormGroup({
