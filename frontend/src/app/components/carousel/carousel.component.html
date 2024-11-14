@@ -1,11 +1,17 @@
 @if(images.length != 0) {
-    <ngb-carousel class="carousel" [id]="carouselId" activeId="id-{{ initialIndex }}" [interval]="0" [showNavigationArrows]="true" [showNavigationIndicators]="true">
-        @for (image of images; track $index) {
-                <ng-template ngbSlide id="id-{{ $index }}">
-                    <div class="carousel-inner rounded-1">
-                        <img [src]="image.src" class="d-block" [alt]="image.alt"/>
-                    </div>
-                </ng-template>
-        }
-    </ngb-carousel>
+    <div class="modal-header">
+        <button type="button" class="btn-close" aria-label="Close" (click)="onClose()"></button>
+    </div>
+    <div class="modal-body">
+        <ngb-carousel [id]="carouselId" activeId="id-{{ initialIndex }}" [interval]="0"
+            [showNavigationArrows]="true" [showNavigationIndicators]="true">
+            @for (image of images; track $index) {
+            <ng-template ngbSlide id="id-{{ $index }}">
+                <div class="carousel-inner rounded-1">
+                    <img [src]="image.src" class="d-block" [alt]="image.alt" />
+                </div>
+            </ng-template>
+            }
+        </ngb-carousel>
+    </div>
 }

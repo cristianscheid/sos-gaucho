@@ -1,7 +1,9 @@
+import { Image } from "./image.type";
+
 export type FeedStory = {
   id: number;
   title: string;
   description: string;
   updatedAt: Date;
-  images: { src: string }[];
+  images: Image[];
 };
