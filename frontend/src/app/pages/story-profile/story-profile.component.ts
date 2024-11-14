@@ -1,10 +1,11 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ImageCircleComponent } from '../../components/image-circle/image-circle.component';
 import { ImageGridComponent } from '../../components/image-grid/image-grid.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormInputComponent } from '../../components/form-input/form-input.component';
 import { FormTextAreaComponent } from '../../components/form-text-area/form-text-area.component';
-import { Image } from '../../types/image.type';
+import { StoryService } from '../../services/story.service';
+import { StoryResponse } from '../../types/story-response.type';
 
 @Component({
   selector: 'app-story-profile',
@@ -14,31 +15,25 @@ import { Image } from '../../types/image.type';
   styleUrl: './story-profile.component.css'
 })
 export class StoryProfileComponent {
-  
-  @Input() userImage: Image = {src: '', alt: ''};
-  @Input() name = '';
-  @Input() city = '';
-  @Input() contact = '';
-  @Input() story = '';
-  @Input() howToHelp = '';
-  @Input() isEditMode = true;
-  @Input() images: Image[] = [];
-  
+
+  @Input() isEditMode = false;
+  @Input() isLoading = true;
+
   @Input()
   set id(storyId: number) {
-    this.storyId = storyId;
+    this.getStory(storyId);
   }
 
-  storyId!: number;
+  story!: StoryResponse;
   storyForm!: FormGroup;
 
-  constructor() { 
+  constructor(private storyService: StoryService) {
     this.storyForm = new FormGroup({
-      name: new FormControl(this.name, Validators.required),
-      city: new FormControl(this.city),
-      contact: new FormControl(this.contact, Validators.required),
-      story: new FormControl(this.story),
-      howToHelp: new FormControl(this.howToHelp)
+      name: new FormControl('', Validators.required),
+      city: new FormControl(''),
+      contact: new FormControl('', Validators.required),
+      story: new FormControl('', Validators.required),
+      howToHelp: new FormControl('', Validators.required),
     });
 
     if (this.isEditMode) {
@@ -46,5 +41,31 @@ export class StoryProfileComponent {
     } else {
       this.storyForm.disable();
     }
+  }
+
+  private getStory(id: number) {
+    this.isLoading = true;
+
+    this.storyService.getStory(id).subscribe({
+      next: (story) => {
+        this.story = story;
+        this.fillForm();
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error(error);
+        this.isLoading = false;
+      }
+    });
+  }
+
+  private fillForm() {
+    this.storyForm.setValue({
+      name: this.story.benefitedName,
+      city: this.story.city ?? '',
+      contact: this.story.contact,
+      story: this.story.longDescription,
+      howToHelp: this.story.helpNeeded,
+    });
   }
 }
