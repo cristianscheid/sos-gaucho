@@ -40,8 +40,8 @@ This project is being developed collaboratively. We would like to acknowledge an
   <img src="https://img.shields.io/badge/Cristian%20Scheid-GitHub?color=gray&logo=github&logoColor=white">
 </a><br>
 
-[![Mauricio Ribeiro Xavier](https://github.com/MX1994.png?size=20)](https://github.com/MX1994)
-<a href="https://github.com/MX1994" target="_blank">
+[![Mauricio Ribeiro Xavier](https://github.com/mauriciorx.png?size=20)](https://github.com/mauriciorx)
+<a href="https://github.com/mauriciorx" target="_blank">
   <img src="https://img.shields.io/badge/Mauricio%20Ribeiro%20Xavier-GitHub?color=gray&logo=github&logoColor=white">
 </a>
 
