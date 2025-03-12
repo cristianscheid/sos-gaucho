@@ -28,7 +28,7 @@ SOS Gaucho is a platform designed to connect people affected by natural disaster
 
 ## Contributors
 
-This project is being developed collaboratively. We would like to acknowledge and thank the following contributors for their dedication and support:
+This project is being developed collaboratively. Thanks to the following contributors for their dedication and support:
 
 [![Arthur Bastos Fanck](https://github.com/abfanck.png?size=20)](https://github.com/abfanck)
 <a href="https://github.com/abfanck" target="_blank">
