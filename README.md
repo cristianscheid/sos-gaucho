@@ -2,7 +2,7 @@
 
 ## Project Status
 
-Development is currently on hold due to time constraints. When development was paused, core features such as user management and story submission were being implemented. Additional features and improvements will follow when development resumes.
+Development is currently on hold due to time constraints. When the project was paused, core features such as user management and story submission were being implemented. Additional features and improvements will follow when development resumes.
 
 ## Description
 
