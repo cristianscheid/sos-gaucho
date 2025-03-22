@@ -2,7 +2,7 @@
 
 ## Project Status
 
-Currently under active development, with core features such as user management and story submission being implemented. Additional features and improvements will follow in the upcoming months.
+Development is currently on hold due to time constraints. When development was paused, core features such as user management and story submission were being implemented. Additional features and improvements will follow when development resumes.
 
 ## Description
 
